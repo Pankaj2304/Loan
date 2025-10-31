@@ -1,0 +1,160 @@
+<div class="card">
+	<div class="card-body">
+
+		<!-- Profile Settings Form -->
+		<form [formGroup]="_Form">
+			<div class="row form-row">
+				<!-- <div class="col-12 col-md-12">
+							<div class="form-group">
+								<div class="change-avatar">
+									<div class="profile-img">
+										<img src="assets/img/about-icon.png" alt="User Image">
+									</div>
+									<div class="upload-img">
+										<div class="change-photo-btn">
+											<span><i class="fa fa-upload"></i> Upload Photo</span>
+											<input type="file" class="upload">
+										</div>
+										<small class="form-text text-muted">Allowed JPG, GIF or PNG. Max size of 2MB</small>
+									</div>
+								</div>
+							</div>
+						</div> -->
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>First Name</label>
+						<input type="text" class="form-control" name="firstName" id="firstName"
+							class="form-control floating" formControlName="firstName"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.firstName.errors}">
+						<div class="invalid-feedback">
+							Please enter a first name.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Last Name</label>
+						<input type="text" class="form-control"  name="lastName" id="lastName"
+							class="form-control floating" formControlName="lastName"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.lastName.errors}">
+						<div class="invalid-feedback">
+							Please enter a last name.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Date of Birth</label>
+						<div class="cal-icon">
+							<input type="text" class="form-control" name="dob" id="dob"
+							class="form-control floating" formControlName="dob"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.dob.errors}">
+						<div class="invalid-feedback">
+							Please enter a Date of Birth.
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Email ID</label>
+						<input type="email" class="form-control" name="email" id="email"
+							class="form-control floating" formControlName="email"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.email.errors}">
+						<div class="invalid-feedback">
+							Please enter a valid email.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>SocialSecurity Number</label>
+						<input type="email" class="form-control" name="socialSecurityNumber" id="socialSecurityNumber"
+							class="form-control floating" formControlName="socialSecurityNumber"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.socialSecurityNumber.errors}">
+						<div class="invalid-feedback">
+							Please enter a SocialSecurity Number.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Citizen Ship</label>
+						<input type="text"  class="form-control" name="citizenShip" id="citizenShip"
+							class="form-control floating" formControlName="citizenShip"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.citizenShip.errors}">
+						<div class="invalid-feedback">
+							Please enter a Citizen Ship.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Marital Status</label>
+						<select class="form-control select form-select" name="maritalStatus" id="maritalStatus"
+							class="form-control floating" formControlName="maritalStatus"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.maritalStatus.errors}">
+							<option value="Married">Married</option>
+							<option value="Seprated">Seprated</option>
+							<option value="UnMaried">UnMaried</option>
+							</select>
+						<!-- <input type="text" class="form-control" name="maritalStatus" id="maritalStatus"
+							class="form-control floating" formControlName="maritalStatus"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.maritalStatus.errors}"> -->
+						<div class="invalid-feedback">
+							Please enter a Marital Status.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Phone</label>
+						<input type="text" class="form-control" name="phone" id="phone" class="form-control floating"
+							formControlName="phone" [ngClass]="{'is-invalid':isSubmitted && _Form.controls.phone.errors}">
+						<div class="invalid-feedback">
+							Please enter a phone.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Home Phone</label>
+						<input type="text" class="form-control" name="homePhone" id="homePhone"
+							class="form-control floating" formControlName="homePhone"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.homePhone.errors}">
+						<div class="invalid-feedback">
+							Please enter a Home Phone.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>Work Phone</label>
+						<input type="text" class="form-control" name="workPhone" id="workPhone"
+							class="form-control floating" formControlName="workPhone"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.workPhone.errors}">
+						<div class="invalid-feedback">
+							Please enter a Work Phone.
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group">
+						<label>EXT.</label>
+						<input type="text" class="form-control" name="ext" id="ext"
+							class="form-control floating" formControlName="ext"
+							[ngClass]="{'is-invalid':isSubmitted && _Form.controls.ext.errors}">
+						<div class="invalid-feedback">
+							Please enter a EXT.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="submit-section">
+				<button type="submit" class="btn btn-primary submit-btn" (click)="addUser()">Save Changes</button>
+			</div>
+		</form>
+		<!-- /Profile Settings Form -->
+
+	</div>
+</div>

@@ -1,0 +1,7 @@
+<ng-select appendTo="body" id="customerUserId" [(ngModel)]="customerUserId" [class]="klass ? klass : 'ngselect2'"
+  [typeahead]="searchText" [trackByFn]="trackByFn" [minTermLength]="minLengthTerm" [loading]="customerLoading"
+  [items]="customerList | async" bindLabel="name" bindValue="userID" [placeholder]="placeholder"
+  (change)="oncustomerSelected($event)" typeToSearchText="Please enter {{minLengthTerm}} or more characters"
+  name="customerDDL" [virtualScroll]="true" [ngClass]="{'invalid-field':hasError}">
+
+</ng-select>

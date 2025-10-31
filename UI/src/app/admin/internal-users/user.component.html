@@ -1,0 +1,201 @@
+ <div class="page-wrapper">
+   <div class="content container-fluid">
+     <!-- Page Header -->
+     <div class="page-header">
+       <div class="row">
+         <div class="col-sm-7">
+           <h3 class="page-title">List of User(s)</h3>
+           <ul class="breadcrumb">
+             <li class="breadcrumb-item"><a [routerLink]="'/admin/dashboard'">Dashboard / Users to Dashboard</a></li>
+             <li class="breadcrumb-item active">User(s)</li>
+           </ul>
+         </div>
+          <div class="col-sm-5 col" style="text-align:right">
+            <a class="btn btn-primary float-right mt-2" data-toggle="modal" (click)="openModalUser(addUser)">
+              Add
+            </a>
+          </div>
+       </div>
+     </div>
+     <!-- /Page Header -->
+
+     <div class="row">
+       <div class="col-sm-12">
+         <div class="card">
+           <div class="card-body">
+            <div class="row" style="margin:10px ;">
+              <div class="col-md-5">
+                <label>Search By Name,Email,Phone No.,ID Number</label>
+                <input type="text" class="form-control" [(ngModel)]="searchText"  (blur)="removeSearch()" />
+              </div>
+              <div class="col-md-6" style="padding-top: 17px;">
+               
+                <button  class="btn btn-primary float-right mt-2" style="margin-right: 20px;"
+                  [disabled]="searchText.trim()==''" (click)="getUsers()">Search</button>
+                    <button class="btn btn-danger float-right mt-2" *ngIf="searchText.length>0" [disabled]="searchText.trim()==''"
+                      (click)="searchText='';removeSearch()">Cancel Search</button>
+              </div>
+            </div>
+             <div class="table-responsive">
+               <div class="table-responsive">
+                 <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                 class="datatable table table-hover table-center mb-0">
+                     <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th></th>
+                        <th>Action</th>
+                    
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of users">
+                        <td>
+                          <h2 class="table-avatar">
+                            <a href="javascript:void(0)">{{item.firstName }} {{item.lastName}} </a>
+                          </h2>
+                        </td>
+                        <td>{{item.email}}</td>
+                        <td>{{(item.mobile ? +(item.mobile.replace('+','')): '')}}</td>
+                        <td></td>
+                        <td><a class="btn btn-sm bg-success-light" (click)="openModal(resettemplate,item)">Change Password</a></td>
+                       <td>
+                         <div class="actions">
+                           <a class="btn btn-sm bg-success-light" data-toggle="modal"
+                             (click)="openModal(addUser,item)">
+                             <i class="feature-edit"></i> Edit
+                           </a>
+                            <a class="btn btn-sm bg-danger-light" data-toggle="modal" (click)="openModalDelete(delete,item)">
+                              <i class="feature-edit"></i> Delete
+                            </a>
+                         </div>
+
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+ <ng-template #resettemplate>
+   <div class="modal-header">
+     <h4 class="modal-title pull-left">Reset Password</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+   <div class="modal-body">
+     <form novalidate (ngSubmit)="submitPassword(resetPassword)" #resetPassword="ngForm">
+       <div class="row form-row">
+         <div class="col-6 col-sm-6">
+           <div class="form-group">
+             <label>New Password</label>
+             <input type="password" class="form-control" name="new_password" #new_password="ngModel"
+               [ngClass]="{'is-invalid':isSubmitted && new_password.errors}" [(ngModel)]="newPassword" required>
+             <div class="invalid-feedback">
+               Please enter new password.
+             </div>
+           </div>
+         </div>
+         <div class="col-6 col-sm-6">
+           <div class="form-group">
+             <label>Confirm Password</label>
+             <input type="password" class="form-control" name="confirm_password" #confirm_password="ngModel"
+               [ngClass]="{'is-invalid':isSubmitted && (confirm_password.errors || confirm_password.value !== new_password.value)}"
+               [(ngModel)]="confirmPassword" required>
+             <div class="invalid-feedback">
+               New password and confirm password should be same.
+             </div>
+           </div>
+         </div>
+       </div>
+       <button type="submit" class="btn btn-primary btn-block">Save Password</button>
+     </form>
+   </div>
+ </ng-template>
+
+<ng-template #addUser>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add New User</h4>
+    <button type="button" class="btn btn-sm bg-danger-light" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- Register Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="submitUser()" autocomplete="off">
+      <div class="form-group form-focus">
+        <input type="text" class="form-control floating" name="firstName" formControlName="firstName"
+          [ngClass]="{'is-invalid':isSubmitted && registerForm.controls.firstName.errors}">
+        <label class="focus-label">First Name<span class="required">*</span></label>
+        <div class="invalid-feedback">
+          Please enter a first name.
+        </div>
+      </div>
+       <div class="form-group form-focus">
+        <input type="text" name="lastName" formControlName="lastName" class="form-control floating"
+          [ngClass]="{'is-invalid':isSubmitted && registerForm.controls.lastName.errors}" required>
+        <label class="focus-label">Last Name<span class="required">*</span></label>
+        <div class="invalid-feedback">
+          Please enter a last name.
+        </div>
+      </div>
+      <div class="form-group form-focus">
+        <input type="email" name="email" formControlName="email" class="form-control floating"
+          [ngClass]="{'is-invalid':isSubmitted && registerForm.controls.email.errors}" required>
+        <label class="focus-label">Email<span class="required">*</span></label>
+        <div class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+      <div class="form-group form-focus">
+        <select class="form-control" name="roleId" formControlName="roleId"
+          [ngClass]="{'is-invalid':isSubmitted && registerForm.controls.roleId.errors}" required>
+          <option value="{{item.id}}" *ngFor="let item of roleList">{{item.role1}}</option>
+        </select>
+        <label class="focus-label select-label">Role<span class="required">*</span></label>
+        <div class="invalid-feedback">
+          Please select Role.
+        </div>
+      </div>
+
+      <div class="form-group form-focus">
+        <input type="text" class="form-control floating" name="mobile" formControlName="mobile" max="15"
+          [ngClass]="{'is-invalid':isSubmitted && registerForm.controls.mobile.errors}" mask="0000000000">
+        <label class="focus-label">Mobile Number<span class="required">*</span></label>
+        <div class="invalid-feedback">
+          Please enter a valid mobile number.
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Add</button>
+     </form>
+  </div>
+</ng-template>
+
+
+<ng-template #delete>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Delete</h4>
+    <button type="button" class="btn btn-sm bg-danger-light" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    Are you sure want to delete this?
+    <div style="margin-top:25px">
+      <button type="button" class="btn btn-primary btn-yes" style="margin-right:20px;" (click)="deleteData()">Yes</button>
+      <button type="button" class="btn btn-secondary  btn-no" (click)="decline()">No</button>
+    </div>
+  </div>
+</ng-template>
+

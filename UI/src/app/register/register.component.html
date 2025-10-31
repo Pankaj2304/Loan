@@ -1,0 +1,123 @@
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Register Content -->
+				<div class="account-content">
+					<div class="row">
+						<div class="col-md-7 col-lg-7 login-left">
+							<img src="assets/img/register-banner.png" class="img-fluid" alt="Register" style="width:100%">
+						</div>
+						<div class="col-md-5 col-lg-5 login-right">
+							<div class="login-header">
+								<h3>{{reg_type}}</h3>
+							</div>
+							<!-- Register Form -->
+							<form [formGroup]="_Form">
+								<div class="form-group form-focus">
+						
+									<input type="text" name="FirstName" id="FirstName" class="form-control floating"
+										formControlName="FirstName"
+										[ngClass]="{'is-invalid':isSubmitted && _Form.controls.FirstName.errors}">
+									<label class="focus-label">First name<span class="required">*</span></label>
+									<div class="invalid-feedback">
+										Please enter a first name.
+									</div>
+								</div>
+								<div class="form-group form-focus">
+									<input type="text" name="LastName" id="LastName" class="form-control floating"
+										formControlName="LastName"
+										[ngClass]="{'is-invalid':isSubmitted && _Form.controls.LastName.errors}">
+									<label class="focus-label">Last name<span class="required">*</span></label>
+									<div class="invalid-feedback">
+										Please enter a last name.
+									</div>
+								</div>
+								<div class="form-group form-focus">
+									<input type="text" name="Email" id="Email" class="form-control floating"
+										formControlName="Email"
+										[ngClass]="{'is-invalid':isSubmitted && _Form.controls.Email.errors}">
+									<label class="focus-label">Email<span class="required">*</span></label>
+									<div class="invalid-feedback">
+										Please enter a valid email.
+									</div>
+								</div>
+								<div class="form-group form-focus">
+									<input type="text" name="Phone" id="Phone" class="form-control floating"
+										formControlName="Phone"
+										[ngClass]="{'is-invalid':isSubmitted && _Form.controls.Phone.errors}">
+									<label class="focus-label">Phone No.<span class="required">*</span></label>
+									<div class="invalid-feedback">
+										Please enter a valid 10 digit phone no.
+									</div>
+								</div>
+
+								<div class="form-group form-focus">
+									<input type="Password" name="Password" id="password-input" class="form-control floating"
+										formControlName="Password"
+										[ngClass]="{'is-invalid':isSubmitted && _Form.controls.Password.errors}">
+									<label class="focus-label">Password<span class="required">*</span></label>
+									<div class="invalid-feedback" *ngIf="isSubmitted">
+										Please enter a password.
+									</div>
+									<div class="col-6 mt-4 mt-xxl-0 w-auto h-auto">
+									
+										<div class="alert px-4 py-3 mb-0 d-none" role="alert" data-mdb-color="warning" id="password-alert">
+											<ul class="list-unstyled mb-0">
+												<li class="requirements leng">
+													<i class="fas fa-check text-success me-2"></i>
+													<i class="fas fa-times text-danger me-3"></i>
+													Your password must have at least 8 chars
+												</li>
+												<li class="requirements big-letter">
+													<i class="fas fa-check text-success me-2"></i>
+													<i class="fas fa-times text-danger me-3"></i>
+													Your password must have at least 1 big letter.
+												</li>
+												<li class="requirements num">
+													<i class="fas fa-check text-success me-2"></i>
+													<i class="fas fa-times text-danger me-3"></i>
+													Your password must have at least 1 number.
+												</li>
+												<li class="requirements special-char">
+													<i class="fas fa-check text-success me-2"></i>
+													<i class="fas fa-times text-danger me-3"></i>
+													Your password must have at least 1 special char.
+												</li>
+											</ul>
+										</div>
+									
+									</div>
+								</div>
+								<div class="terms-and-policy pt-2 pb-2">
+									<input type="checkbox" required name="checkbox" value="check" id="agree" 
+							formControlName="IsChecked" [ngClass]="{'is-invalid':isSubmitted && _Form.controls.IsChecked.errors}"
+									/><span
+										class="agree" >I agree to these <span class="terms"><a
+												[routerLink]="'/terms-conditions'" target="_blank">Terms of Use</a> and
+											<a [routerLink]="'/privacy-policy'" target="_blank">Privacy
+												Policy</a></span></span>
+												<div class="invalid-feedback">
+													Please accept privacy policy.
+												</div>
+								</div>
+								<div class="text-end">
+									<a class="forgot-link" [routerLink]="'/login-page'">Already have an account?</a>
+								</div>
+								<button class="btn btn-primary w-100 btn-lg login-btn" type="submit"
+									(click)="signup()">Signup</button>
+
+							</form>
+							<!-- /Register Form -->
+
+						</div>
+					</div>
+				</div>
+				<!-- /Register Content -->
+
+			</div>
+		</div>
+
+	</div>
+
+</div>

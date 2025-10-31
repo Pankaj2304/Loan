@@ -1,0 +1,175 @@
+
+   <!-- Top Header -->
+   <div class="top-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col d-flex justify-content-between">
+                <ul class="d-flex justify-content-between align-items-center">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Number : (254) 870-7476
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+                <ul class="d-flex justify-content-between align-items-center">
+                    <li></li>
+                    <li>
+                        <div class="social-icon">
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-google-plus-g"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Top Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg header-nav">
+            <div class="navbar-header">
+                <a id="mobile_btn" href="javascript:void(0);">
+                    <span class="bar-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </a>
+                <a (click)="home()" class="navbar-brand logo">
+                    <img src="assets/img/logo.png" style="height:44px;width:160px" alt="Logo">
+                </a>
+            </div>
+            <div class="main-menu-wrapper ms-auto">
+                <div class="menu-header">
+                    <a [routerLink]="'/'" class="menu-logo">
+                        <img src="assets/img/logo.png" style="height:44px;width:160px" alt="Logo">
+                    </a>
+                    <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+                <ul class="main-nav" >
+                    <!-- <li [class.active]="base === ''">
+                        <a [routerLink]="''" >Home</a>
+                    </li> -->
+
+                    <!-- <li [class.active]="base === 'doctor' || base === 'doctor-register' || (base === 'patients' && page === 'patient-profile')  || (base === 'patients' && page === 'chat-doctor')" (click)="addStyle('doctor')"class="has-submenu"  style="cursor: pointer;" >
+                        <a>Doctors <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu" id="doctor">
+                            <li [class.active]="base === 'doctor' && page === 'dashboard'"><a [routerLink]="'doctor/dashboard'">Dashboard</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'appointment'"><a [routerLink]="'doctor/appointment'">Appointments</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'scheduletiming'"><a [routerLink]="'doctor/scheduletiming'">Schedule Timing</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'patients'"><a [routerLink]="'doctor/patients'">Patients List</a></li>
+                            <li [class.active]="base === 'patients' && page === 'patient-profile'"><a [routerLink]="'patients/patient-profile'">Patients Profile</a></li>
+                            <li [class.active]="base === 'patients' && page === 'chat-doctor'"><a [routerLink]="'doctor/message'">Chat</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'invoice'"><a [routerLink]="'doctor/invoice'">Invoices</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'settings'"><a [routerLink]="'doctor/settings'">Profile Settings</a></li>
+                            <li [class.active]="base === 'doctor' && page === 'reviews'"><a [routerLink]="'doctor/reviews'">Reviews</a></li>
+                            <li [class.active]="base === 'doctor-register'"><a [routerLink]="'/doctor-register'">Doctor Register</a></li>
+                        </ul>
+                    </li>
+                    <li  [class.active]="base === 'map-grid'  || base === 'map-list' || base === 'patients' || base === 'change-password'" class="has-submenu" (click)="addStyle('patient')">
+                        <a >Patients <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu" id="patient">
+                            <li [class.active]="base === 'map-grid' || base === 'map-list'" class="has-submenu">
+                                <a href="javascript:void(0);">Doctors</a>
+                                <ul class="submenu">
+                                    <li [class.active]="base === 'map-grid'"><a (click)="mapGrid()">Map Grid</a></li>
+                                    <li [class.active]="base === 'map-list'"><a (click)="mapList()">Map List</a></li>
+                                </ul>
+                            </li>
+                            <li [class.active]="base === 'patients' && page === 'search-doctor'" ><a [routerLink]="'patients/search-doctor'">Search Doctor</a></li>
+                            <li [class.active]="base === 'patients' && page === 'doctor-profile'" ><a [routerLink]="'patients/doctor-profile'">Doctor Profile</a></li>
+                            <li [class.active]="base === 'patients' && page === 'booking'" ><a [routerLink]="'patients/booking'">Booking</a></li>
+                            <li [class.active]="base === 'patients' && page === 'checkout'" ><a [routerLink]="'patients/checkout'">Checkout</a></li>
+                            <li [class.active]="base === 'patients' && page === 'success'" ><a [routerLink]="'patients/success'">Booking Success</a></li>
+                            <li [class.active]="base === 'patients' && page === 'dashboard'" ><a [routerLink]="'patients/dashboard'" > Patient Dashboard</a></li>
+                            <li [class.active]="base === 'patients' && page === 'favourites'" ><a [routerLink]="'patients/favourites'">Favourites</a></li>
+                            <li [class.active]="base === 'patients' && page === 'message'" ><a [routerLink]="'patients/message'">Chat</a></li>
+                            <li [class.active]="base === 'patients' && page === 'settings'"  ><a [routerLink]="'patients/settings'">Profile Settings</a></li>
+                            <li [class.active]="base === 'change-password'" ><a [routerLink]="'change-password'">Change Password</a></li>
+                        </ul>
+                    </li>
+
+                    <li [class.active]="base === 'voice-call' || base === 'video-call' || base === 'calender' || base === 'blank' || base === 'login-page' 
+                    || base === 'Register' || base === 'forgot-password' 
+                    || (base === 'patients' && page === 'component') || (base === 'doctor' && page === 'invoice') || base === 'invoice-details'"class="has-submenu" (click)="addStyle('pages')">
+                        <a href="javascript:void(0)">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu" id = 'pages'>
+                            <li [class.active]="base === 'voice-call'"><a [routerLink]="'voice-call'">Voice Call</a></li>
+                            <li [class.active]="base === 'video-call'"><a [routerLink]="'video-call'">Video Call</a></li>
+                            <li><a [routerLink]="'patients/search-doctor'">Search Doctors</a></li>
+                            <li [class.active]="base === 'calender'"><a [routerLink]="'calender'">Calendar</a></li>
+                            <li [class.active]="base === 'patients' && page === 'component'"><a [routerLink]="'patients/component'">Components</a></li>
+                            <li [class.active]="(base === 'doctor' && page === 'invoice') || base === 'invoice-details'" class="has-submenu">
+                                <a href="javascript:void(0)">Invoices</a>
+                                <ul class="submenu">
+                                    <li [class.active]="base === 'doctor' && page === 'invoice'"><a [routerLink]="'doctor/invoice'">Invoices</a></li>
+                                    <li [class.active]="base === 'invoice-details'"><a [routerLink]="'invoice-details'">Invoice View</a></li>
+                                </ul>
+                            </li>
+                            <li [class.active]="base === 'blank'"><a [routerLink]="'blank'">Starter Page</a></li>
+                            <li [class.active]="base === 'login-page'"><a [routerLink]="'login-page'">Login</a></li>
+                            <li [class.active]="base === 'Register'"><a [routerLink]="'Register'">Register</a></li>
+                            <li [class.active]="base === 'forgot-password'"><a [routerLink]="'forgot-password'">Forgot Password</a></li>
+                        </ul>
+                    </li> 
+                    <li class="has-submenu" (click)="addStyle('blog')" [class.active]="base === 'blog' || base === 'blog-grid' || base === 'blog-details'">
+                        <a href="javascript:void(0)">Blog <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu" id = "blog">
+                            <li [class.active]="base === 'blog'"><a [routerLink]="'blog'">Blog List</a></li>
+                            <li [class.active]="base === 'blog-grid'"><a [routerLink]="'blog-grid'">Blog Grid</a></li> 
+                            <li [class.active]="base === 'blog-details'"><a [routerLink]="'blog-details'">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu" [class.active]="base === 'admin'">
+                        <a (click)="navigate('Admin')">Admin</a>
+                    </li> -->
+                    <!-- <li class="login-link">
+                        <a [routerLink]="'login-page'">Login / Signup</a>
+                    </li> -->
+                </ul>
+            </div>
+            <ul class="nav header-navbar-rht">
+                <!-- <li [class.active]="base === 'login-page'" class="nav-item" *ngIf="(!auth || base === '')">
+                    <a class="nav-link"  [routerLink]="'login-page'">Login / Signup </a>
+                </li> -->
+                <!-- User Menu -->
+                <li class="nav-item dropdown has-arrow logged-item">
+                    <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <span class="user-img">
+                             <img  class="rounded-circle" src="assets/admin/img/profiles/avatar-01.jpg" style="height: 44px;width: 44px;" alt="Richard Wilson">
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" style="right:0;left:auto;min-width: 360px!important ">
+                        <div class="user-header">
+                            <div class="avatar avatar-sm">
+                                <img  src="assets/admin/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="user-text">
+                                <h5>Ernesto De La Cruz</h5>
+                                <h6 style="font-weight: 500;">Loan Officer</h6>
+                                <h6 style="font-weight: 500;">NMLS #1826241</h6>
+                                <h6 style="font-weight: 500;">2024 Austin Ave, Waco, TX, 76701</h6>
+                                <h6 style="font-weight: 500;color:#47466c"><a  style="    font-weight: 500;color:#47466c" rel="noopener" href="tel:2548707476">(254) 870-7476</a></h6>
+                                <h6 style="font-weight: 500;color:#47466c"><a  style="    font-weight: 500;color:#47466c" href="mailto:ernesto@plofamerica.com" rel="noopener" target="_blank">ernesto@plofamerica.com</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                </ul>
+        </nav>
+    </header>

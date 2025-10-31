@@ -1,0 +1,17 @@
+.required {
+	color : red;
+	padding-left: 3px;
+}
+.content {
+	padding-bottom: 50px;
+}
+.wrong .fa-check {
+	display: none;
+}
+
+.good .fa-times {
+	display: none;
+}
+.login-btn{
+	border-radius: 0px !important;
+}

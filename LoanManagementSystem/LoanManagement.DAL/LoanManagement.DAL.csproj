@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoanManagement.Models\LoanManagement.Models.csproj" />
+    <ProjectReference Include="..\LoanManagementDataContext\LoanManagementDataContext.csproj" />
+  </ItemGroup>
+
+</Project>

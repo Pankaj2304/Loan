@@ -1,0 +1,49 @@
+@import './../assets/plugins/fontawesome/css/fontawesome.min.css';
+@import './../assets/admin/css/feathericon.min.css';
+@import './../assets/plugins/fontawesome/css/all.min.css';
+@import './../assets/admin/plugins/morris/morris.css';
+@import './../assets/css/style.css';
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.preloader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/img/shapes/shape-9.png");
+    background-size: 130px;
+    animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+}
+.dash-widget-icon {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1.875rem;
+  height: 50px;
+  justify-content: center;
+  line-height: 48px;
+  text-align: center;
+  width: 50px;
+  border: 3px solid;
+  border-radius: 50px;
+  padding: 28px;
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: -0.1rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+.login-btn {
+  border-radius: 0px !important;
+}

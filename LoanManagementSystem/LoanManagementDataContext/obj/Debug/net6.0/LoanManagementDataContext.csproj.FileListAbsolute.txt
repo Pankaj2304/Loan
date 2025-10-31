@@ -1,0 +1,14 @@
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\bin\Debug\net6.0\LoanManagementDataContext.deps.json
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\bin\Debug\net6.0\LoanManagementDataContext.runtimeconfig.json
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\bin\Debug\net6.0\LoanManagementDataContext.dll
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\bin\Debug\net6.0\LoanManagementDataContext.pdb
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.csproj.AssemblyReference.cache
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.AssemblyInfoInputs.cache
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.AssemblyInfo.cs
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.csproj.CoreCompileInputs.cache
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.dll
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\refint\LoanManagementDataContext.dll
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.pdb
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\LoanManagementDataContext.genruntimeconfig.cache
+C:\Users\Devil\Source\Repos\LoanManagementSystem\LoanManagementDataContext\obj\Debug\net6.0\ref\LoanManagementDataContext.dll
